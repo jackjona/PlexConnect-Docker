@@ -4,7 +4,7 @@
 if [ ! -f /PlexConnect/ATVSettings.cfg ]; then
   echo "*** Cloning PlexConnect ***"
   cd /
-  git clone https://github.com/jackjona/plexconnect-docker.git
+  git clone https://github.com/iBaa/PlexConnect.git
 else
   echo "*** Updating PlexConnect ***"
   cd /PlexConnect
