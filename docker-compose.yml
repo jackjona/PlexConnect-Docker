@@ -1,0 +1,16 @@
+version: "3"
+
+services:
+  plexconnect:
+    container_name: plexconnect
+    image: jackjona/plexconnect
+    ports:
+      # These ports are in format <host-port>:<container-port>
+      - "443:443/tcp"
+      - "80:80/tcp"
+    environment:
+      - USERID=1000
+      - GROUPID=1000
+    volumes:
+      - "./plexconnect:/PlexConnect"
+    restart: unless-stopped
