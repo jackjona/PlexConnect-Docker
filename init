@@ -12,11 +12,11 @@ else
 fi
 
 #If this is the first time, generate certificates
-if [ ! -f /PlexConnect/assets/certificates/trailers.pem ]; then
+if [ ! -f /PlexConnect/assets/certificates/marketwatch.pem ]; then
   echo "*** Generating certificates ***"
-  openssl req -new -nodes -newkey rsa:2048 -out ./trailers.pem -keyout ./trailers.key -x509 -days 7300 -subj "/C=US/CN=trailers.apple.com"
-  openssl x509 -in ./trailers.pem -outform der -out ./trailers.cer && cat ./trailers.key >> ./trailers.pem
-  mv trailers.* /PlexConnect/assets/certificates
+  openssl req -new -nodes -newkey rsa:2048 -out ./marketwatch.pem -keyout ./marketwatch.key -x509 -days 7300 -subj "/C=US/CN=video-api-secure.wsj.com"
+  openssl x509 -in ./marketwatch.pem -outform der -out ./marketwatch.cer && cat ./marketwatch.key >> ./marketwatch.pem
+  mv marketwatch.* /PlexConnect/assets/certificates
 fi
 
 echo "*** Setting userID and groupID ***"
